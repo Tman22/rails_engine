@@ -1,0 +1,23 @@
+one:
+  id: 1
+  result: "Ready"
+  invoice_id: 1
+  credit_card_number: "4654405418249632"
+  created_at: 2012-03-27 14:53:59 UTC
+  updated_at: 2012-03-27 14:53:59 UTC
+
+two:
+  id: 2
+  result: "Ready"
+  invoice_id: 2
+  credit_card_number: "4654405418249632"
+  created_at: 2012-03-27 14:53:59 UTC
+  updated_at: 2012-03-27 14:53:59 UTC
+
+three:
+  id: 3
+  result: "Cancelled"
+  invoice_id: 1
+  credit_card_number: "4934405418249632"
+  created_at: 2012-03-27 14:50:59 UTC
+  updated_at: 2012-03-27 14:50:59 UTC
