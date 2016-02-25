@@ -99,7 +99,7 @@ RSpec.describe Api::V1::Invoices::FindController, type: :controller do
       expect(response).to be_success
       expect(invoices.count).to eq 2
       expect(invoices.first['id']).to eq 1
-      expect(invoices.last['id']).to eq 3
+      expect(invoices.last['id']).to eq 2
     end
 
     it "responds with all invoices with created_at" do

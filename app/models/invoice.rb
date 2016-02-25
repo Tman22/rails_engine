@@ -9,6 +9,12 @@ class Invoice < ActiveRecord::Base
     joins(:transactions).where(transactions: { result: "success" }  )
   end
 
+  def self.total_revenue(params)
+    where(created_at: params[:date])
+    .joins(:transactions).where(transactions: {result: "success"})
+    .joins(:invoice_items).sum("unit_price * quantity").to_f
+  end
+
   def self.failed
     joins(:transactions).where(transactions: { result: "failed"})
   end

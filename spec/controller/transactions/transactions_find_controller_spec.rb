@@ -82,7 +82,7 @@ RSpec.describe Api::V1::Transactions::FindController, type: :controller do
       transactions = JSON.parse(response.body)
 
       expect(response).to be_success
-      expect(transactions.count).to eq 2
+      expect(transactions.count).to eq 1
       expect(transactions.first['id']).to eq 1
     end
 

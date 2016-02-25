@@ -10,7 +10,7 @@ RSpec.describe Api::V1::Merchants::InvoicesController, type: :controller do
 
       expect(response).to be_success
       expect(invoices.first['status']).to eq 'Ready'
-      expect(invoices.last['status']).to eq 'Cancelled'
+      expect(invoices.last['status']).to eq 'Ready'
       expect(invoices.count).to eq 2
     end
   end

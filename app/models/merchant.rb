@@ -14,10 +14,6 @@ class Merchant < ActiveRecord::Base
     end
   end
 
-  def pending_customers
-    invoices.failed.group(:customer_id)
-  end
-
   def favorite_customer
     invoices.successful.group(:customer_id).count.max_by { |k,v| v }.first
   end
