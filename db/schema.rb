@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(version: 20160223224738) do
     t.integer  "item_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.citext   "unit_price"
-    t.citext   "quantity"
+    t.decimal  "unit_price"
+    t.integer  "quantity"
   end
 
   add_index "invoice_items", ["invoice_id"], name: "index_invoice_items_on_invoice_id", using: :btree
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20160223224738) do
   create_table "items", force: :cascade do |t|
     t.citext   "name"
     t.citext   "description"
-    t.citext   "unit_price"
+    t.decimal  "unit_price"
     t.integer  "merchant_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false

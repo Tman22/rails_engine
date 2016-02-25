@@ -10,7 +10,7 @@ RSpec.describe Api::V1::Customers::TransactionsController, type: :controller do
 
       expect(response).to be_success
       expect(transactions.first['result']).to eq 'Ready'
-      expect(transactions.last['id']).to eq 2
+      expect(transactions.last['id']).to eq 3
     end
   end
 end

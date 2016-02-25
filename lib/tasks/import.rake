@@ -18,7 +18,7 @@ task import: :environment do
     formatted_price = row["unit_price"].to_f / 100
     Item.create!(name: row["name"],
                  description: row["description"],
-                 unit_price: formatted_price.to_s,
+                 unit_price: formatted_price,
                  merchant_id: row["merchant_id"],
                  created_at: row["created_at"],
                  updated_at: row["updated_at"] )
@@ -36,6 +36,13 @@ task import: :environment do
 
   file = File.join(Rails.root.join('lib', 'tasks'), 'invoice_items.csv')
   CSV.foreach(file, headers: true) do |row|
-    InvoiceItem.create!(row.to_h)
+    formatted_price = row["unit_price"].to_f / 100
+    InvoiceItem.create!( item_id: row["item_id"],
+                         quantity: row["quantity"],
+                         unit_price: formatted_price,
+                         invoice_id: row["invoice_id"],
+                         created_at: row["created_at"],
+                         updated_at: row["updated_at"])
   end
+
 end

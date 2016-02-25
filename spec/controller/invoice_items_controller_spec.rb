@@ -9,8 +9,8 @@ RSpec.describe Api::V1::InvoiceItemsController, type: :controller do
      invoice_items = JSON.parse(response.body)
 
      expect(response).to be_success
-     expect(invoice_items.first['quantity']).to eq '3'
-     expect(invoice_items.last['quantity']).to eq '1'
+     expect(invoice_items.first['quantity']).to eq 3
+     expect(invoice_items.last['quantity']).to eq 1
     end
   end
 
@@ -21,7 +21,7 @@ RSpec.describe Api::V1::InvoiceItemsController, type: :controller do
      invoice_item = JSON.parse(response.body)
 
      expect(response).to be_success
-     expect(invoice_item['quantity']).to eq '3'
+     expect(invoice_item['quantity']).to eq 3
     end
   end
 
