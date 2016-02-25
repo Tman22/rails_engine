@@ -16,7 +16,7 @@ two:
 
 three:
   id: 3
-  result: "Cancelled"
+  result: "Failed"
   invoice_id: 1
   credit_card_number: "4934405418249632"
   created_at: 2012-03-27 14:50:59 UTC

@@ -6,15 +6,22 @@ RSpec.describe Merchant, type: :model do
   describe "covers methods" do
     it "revenue" do
       params = {date: "2012-03-27 14:53:59 UTC"}
-      a = Merchant.find(1).revenue(params)
+      merchant = Merchant.find(1).revenue(params)
 
-      expect(a).to eq 22222.0
+      expect(merchant).to eq 22222.0
+    end
+
+    it "revenue else test" do
+      params = {}
+      merchant = Merchant.find(1).revenue(params)
+
+      expect(merchant).to eq 22222.0
     end
 
     it "test favorite_customer" do
-      a = Merchant.find(1).favorite_customer
+      merchant = Merchant.find(1).favorite_customer
 
-      expect(a).to eq 1 #id of customer
+      expect(merchant).to eq 1 #id of customer
     end
   end
 end
